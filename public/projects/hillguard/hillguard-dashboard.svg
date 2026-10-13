@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hgDbBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1017" />
+      <stop offset="100%" stop-color="#040608" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#hgDbBg)" />
+
+  <!-- Top bar -->
+  <rect x="50" y="40" width="1100" height="60" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" />
+  <circle cx="85" cy="70" r="10" fill="#38BDF8" />
+  <text x="110" y="76" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="16" font-weight="700">NE-SAFE COMMAND CENTRE</text>
+  <text x="360" y="75" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">HILLGUARD · SIH PROTOTYPE</text>
+  <rect x="940" y="55" width="180" height="30" rx="15" fill="rgba(239, 68, 68, 0.15)" />
+  <text x="965" y="75" fill="#EF4444" font-family="system-ui, sans-serif" font-size="12" font-weight="600">● 4 ACTIVE ALERTS</text>
+
+  <!-- Left Map Panel Simulation -->
+  <rect x="50" y="120" width="700" height="630" rx="16" fill="rgba(255,255,255,0.015)" stroke="rgba(255,255,255,0.06)" />
+  <text x="80" y="160" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="13" font-weight="600">GIS SECTOR RISK MAP</text>
+
+  <!-- Simulated topographic map layers -->
+  <path d="M 80 280 Q 250 200 450 320 T 720 280" fill="none" stroke="rgba(56, 189, 248, 0.3)" stroke-width="2" />
+  <path d="M 80 340 Q 250 260 450 380 T 720 340" fill="none" stroke="rgba(56, 189, 248, 0.2)" stroke-width="2" />
+  <path d="M 80 400 Q 250 320 450 440 T 720 400" fill="none" stroke="rgba(56, 189, 248, 0.15)" stroke-width="2" />
+  
+  <!-- Cluster pins -->
+  <circle cx="280" cy="310" r="14" fill="#EF4444" opacity="0.8" />
+  <text x="275" y="315" fill="#FFF" font-size="12" font-weight="700">!</text>
+  <text x="305" y="315" fill="#D7E2EA" font-size="12">NH-10 Sevoke</text>
+
+  <circle cx="490" cy="270" r="11" fill="#F59E0B" opacity="0.8" />
+  <text x="510" y="275" fill="#D7E2EA" font-size="12">Tawang Corridor</text>
+
+  <circle cx="620" cy="410" r="11" fill="#10B981" opacity="0.8" />
+  <text x="640" y="415" fill="#D7E2EA" font-size="12">Kohima Ring</text>
+
+  <!-- Right Details Panel -->
+  <rect x="770" y="120" width="380" height="630" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" />
+  <text x="800" y="165" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12" letter-spacing="1">SELECTED SECTOR</text>
+  <text x="800" y="200" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="20" font-weight="700">NH-10 · Sevoke–Rangpo</text>
+  <text x="800" y="225" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">Kalimpong, West Bengal</text>
+
+  <rect x="800" y="250" width="320" height="90" rx="12" fill="rgba(239, 68, 68, 0.1)" stroke="rgba(239, 68, 68, 0.2)" />
+  <text x="820" y="285" fill="#EF4444" font-family="system-ui, sans-serif" font-size="12" font-weight="600">CRITICAL HAZARD SCORE</text>
+  <text x="820" y="325" fill="#EF4444" font-family="system-ui, sans-serif" font-size="32" font-weight="800">82 <tspan font-size="16" fill="#8F9CA7">/ 100</tspan></text>
+
+  <text x="800" y="380" fill="#D7E2EA" font-family="system-ui, sans-serif" font-size="13" font-weight="600">PRIMARY DRIVERS</text>
+  <rect x="800" y="400" width="320" height="45" rx="8" fill="rgba(255,255,255,0.03)" />
+  <text x="820" y="428" fill="#8F9CA7" font-size="12">Rainfall (164mm)</text>
+  <text x="1080" y="428" fill="#38BDF8" font-size="12" text-anchor="end">88% impact</text>
+
+  <rect x="800" y="455" width="320" height="45" rx="8" fill="rgba(255,255,255,0.03)" />
+  <text x="820" y="483" fill="#8F9CA7" font-size="12">Soil Moisture (87%)</text>
+  <text x="1080" y="483" fill="#F59E0B" font-size="12" text-anchor="end">82% impact</text>
+
+  <rect x="800" y="510" width="320" height="45" rx="8" fill="rgba(255,255,255,0.03)" />
+  <text x="820" y="538" fill="#8F9CA7" font-size="12">Slope Exposure (38°)</text>
+  <text x="1080" y="538" fill="#A855F7" font-size="12" text-anchor="end">76% impact</text>
+
+  <rect x="800" y="580" width="320" height="130" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" />
+  <text x="820" y="615" fill="#8F9CA7" font-size="12" font-weight="600">ACTION RECOMMENDATION</text>
+  <text x="820" y="645" fill="#D7E2EA" font-size="12">Immediate field dispatch to verify</text>
+  <text x="820" y="665" fill="#D7E2EA" font-size="12">vulnerable highway bridge points.</text>
+</svg>

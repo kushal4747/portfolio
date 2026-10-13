@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="hgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E131F" />
+      <stop offset="100%" stop-color="#05070B" />
+    </linearGradient>
+    <linearGradient id="hgAmber" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#EF4444" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#hgGrad)" />
+
+  <!-- Contour lines / Topography simulation -->
+  <g fill="none" stroke="rgba(56, 189, 248, 0.08)" stroke-width="1.5">
+    <ellipse cx="600" cy="500" rx="550" ry="250" />
+    <ellipse cx="600" cy="480" rx="460" ry="200" />
+    <ellipse cx="600" cy="460" rx="370" ry="150" />
+    <ellipse cx="600" cy="440" rx="280" ry="110" />
+    <ellipse cx="600" cy="420" rx="190" ry="70" />
+  </g>
+
+  <!-- Glowing Radar Ping -->
+  <circle cx="600" cy="420" r="18" fill="#EF4444" opacity="0.9" />
+  <circle cx="600" cy="420" r="45" fill="none" stroke="#EF4444" stroke-width="2" opacity="0.5" />
+  <circle cx="600" cy="420" r="90" fill="none" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="6 6" opacity="0.3" />
+
+  <!-- Glass overlay card -->
+  <rect x="160" y="120" width="880" height="560" rx="24" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.1)" stroke-width="1" />
+  
+  <text x="210" y="180" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="13" font-weight="700" letter-spacing="2">SMART INDIA HACKATHON · SIH 2026</text>
+  <text x="210" y="225" fill="#FFFFFF" font-family="system-ui, sans-serif" font-size="32" font-weight="800">HILLGUARD · AI EARLY WARNING SYSTEM</text>
+  <text x="210" y="255" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="14">Multi-source landslide risk intelligence &amp; sensor telemetry modeling</text>
+
+  <!-- Sensor Indicators -->
+  <g transform="translate(210, 310)">
+    <!-- Rainfall -->
+    <rect x="0" y="0" width="230" height="130" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" />
+    <text x="20" y="32" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">PRECIPITATION / 3H</text>
+    <text x="20" y="75" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="28" font-weight="700">142 mm</text>
+    <text x="20" y="105" fill="#EF4444" font-family="system-ui, sans-serif" font-size="12">Threshold Warning</text>
+
+    <!-- Soil Moisture -->
+    <rect x="250" y="0" width="230" height="130" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" />
+    <text x="270" y="32" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">SOIL SATURATION</text>
+    <text x="270" y="75" fill="#F59E0B" font-family="system-ui, sans-serif" font-size="28" font-weight="700">86.4%</text>
+    <text x="270" y="105" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">Critical Saturation</text>
+
+    <!-- Slope Angle -->
+    <rect x="500" y="0" width="230" height="130" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" />
+    <text x="520" y="32" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">SLOPE INCLINATION</text>
+    <text x="520" y="75" fill="#A855F7" font-family="system-ui, sans-serif" font-size="28" font-weight="700">38.5°</text>
+    <text x="520" y="105" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">High Hazard Terrain</text>
+  </g>
+
+  <!-- Risk Score Gauge -->
+  <rect x="210" y="470" width="750" height="150" rx="16" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" />
+  <text x="240" y="515" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="13">COMPUTED HAZARD INDEX · NH-10 CORRIDOR</text>
+  <text x="240" y="565" fill="#EF4444" font-family="system-ui, sans-serif" font-size="36" font-weight="800">82 / 100 · ELEVATED RISK</text>
+  <text x="240" y="595" fill="#8F9CA7" font-family="system-ui, sans-serif" font-size="12">Automated signal fusion: Satellite + IMD Weather + Geotechnical telemetry</text>
+</svg>
