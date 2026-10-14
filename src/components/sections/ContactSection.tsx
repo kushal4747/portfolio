@@ -81,11 +81,11 @@ export const ContactSection: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="relative pt-28 md:pt-40 pb-16 bg-[#08080A] text-[#D7E2EA] px-6 sm:px-8 lg:px-12 border-t border-white/10"
+      className="relative pt-20 md:pt-40 pb-16 bg-[#08080A] text-[#D7E2EA] px-4 sm:px-8 lg:px-12 border-t border-white/10"
     >
       <div className="max-w-7xl mx-auto">
         {/* Massive Headline & Supporting Subtext */}
-        <div className="mb-20">
+        <div className="mb-14 sm:mb-20">
           <FadeIn>
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#8F9CA7] font-semibold block mb-4">
               07 / GET IN TOUCH
@@ -93,7 +93,7 @@ export const ContactSection: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={0.1}>
-            <h2 className="font-display font-black uppercase text-5xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.88] text-white">
+            <h2 className="font-display font-black uppercase text-3xl xs:text-4xl sm:text-7xl md:text-8xl lg:text-9xl tracking-tight leading-[0.92] sm:leading-[0.88] text-white">
               LET'S BUILD<br />
               <span className="bg-gradient-to-b from-[#BBCCD7] to-[#646973] bg-clip-text text-transparent">
                 SOMETHING
@@ -103,16 +103,16 @@ export const ContactSection: React.FC = () => {
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <p className="mt-8 text-lg sm:text-xl md:text-2xl text-[#8F9CA7] max-w-2xl font-light leading-relaxed">
+            <p className="mt-6 sm:mt-8 text-base sm:text-xl md:text-2xl text-[#8F9CA7] max-w-2xl font-light leading-relaxed">
               I'm always interested in learning, collaborating, discussing technology and working on interesting projects.
             </p>
           </FadeIn>
         </div>
 
         {/* 2-Column Grid: Left Socials & Information, Right Form */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-20 border-b border-white/10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 pb-16 sm:pb-20 border-b border-white/10">
           {/* Left Column: Direct Channels (Cols 1-5) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-10">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8 sm:space-y-10">
             <div>
               <h3 className="font-mono text-xs font-bold uppercase tracking-widest text-gray-400 mb-5">
                 DIRECT CONTACT &amp; PROFILES
@@ -308,15 +308,15 @@ export const ContactSection: React.FC = () => {
         </div>
 
         {/* Bottom Bar / Copyright */}
-        <div className="pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500">
-          <div className="flex items-center gap-3">
+        <div className="pt-8 sm:pt-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono text-gray-500 text-center sm:text-left">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 sm:gap-3">
             <span>© {new Date().getFullYear()} {profileConfig.name}</span>
-            <span>•</span>
+            <span className="hidden sm:inline">•</span>
             <span>Computer Science Engineering</span>
           </div>
 
-          <div className="flex items-center gap-5">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+            <div className="flex flex-wrap items-center justify-center gap-2">
               <a
                 href={socialConfig.github}
                 target="_blank"
@@ -341,10 +341,10 @@ export const ContactSection: React.FC = () => {
                 href={`mailto:${socialConfig.email}`}
                 title="Send Email"
                 aria-label={`Send Email to ${socialConfig.email}`}
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors font-mono text-xs border border-white/5 hover:border-cyan-500/30"
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 hover:text-white transition-colors font-mono text-xs border border-white/5 hover:border-cyan-500/30 max-w-[220px] xs:max-w-none truncate"
               >
-                <Mail className="w-3.5 h-3.5 text-cyan-400" />
-                <span className="text-white/90">{socialConfig.email}</span>
+                <Mail className="w-3.5 h-3.5 text-cyan-400 flex-shrink-0" />
+                <span className="text-white/90 truncate">{socialConfig.email}</span>
               </a>
             </div>
 

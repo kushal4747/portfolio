@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-28 md:py-40 bg-transparent overflow-hidden px-6 sm:px-8 lg:px-12"
+      className="relative py-20 md:py-40 bg-transparent overflow-hidden px-4 sm:px-8 lg:px-12"
     >
       {/* 3D Floating Tech Objects */}
       <FloatingTechElements />
@@ -25,11 +25,11 @@ export const AboutSection: React.FC = () => {
         />
 
         {/* Character-by-Character / Word-by-Word Scroll Reveal Statement */}
-        <div className="my-12 md:my-16 max-w-5xl">
+        <div className="my-10 md:my-16 max-w-5xl">
           <AnimatedText
             text={profileConfig.bio.aboutParagraph}
             mode="scroll-reveal"
-            className="font-display font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.3] tracking-tight"
+            className="font-display font-medium text-lg xs:text-xl sm:text-3xl md:text-4xl lg:text-5xl leading-[1.35] sm:leading-[1.3] tracking-tight"
           />
 
           {/* Understated Motto Line */}

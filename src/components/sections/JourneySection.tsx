@@ -16,7 +16,7 @@ export const JourneySection: React.FC = () => {
   return (
     <section
       id="journey"
-      className="relative py-28 md:py-40 bg-transparent text-[#D7E2EA] px-6 sm:px-8 lg:px-12 border-t border-white/5"
+      className="relative py-20 md:py-40 bg-transparent text-[#D7E2EA] px-4 sm:px-8 lg:px-12 border-t border-white/5"
     >
       <div className="max-w-7xl mx-auto">
         <SectionHeading
@@ -25,7 +25,7 @@ export const JourneySection: React.FC = () => {
           subtitle="A timeline tracking academic milestones, my current engineering immersion, and upcoming fundamentals."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mt-12 sm:mt-16">
           {journeyTimeline.map((item, index) => {
             const IconComponent = iconMap[item.icon] || Code2;
             const isCurrent = item.status === 'current';
@@ -37,7 +37,7 @@ export const JourneySection: React.FC = () => {
                 className="h-full"
               >
                 <div
-                  className={`h-full flex flex-col justify-between p-6 sm:p-8 rounded-3xl border transition-all duration-300 relative group ${
+                  className={`h-full flex flex-col justify-between p-5 sm:p-8 rounded-2xl sm:rounded-3xl border transition-all duration-300 relative group ${
                     isCurrent
                       ? 'bg-[#15181F] border-cyan-500/40 shadow-xl shadow-cyan-950/20'
                       : 'bg-[#121417] border-white/10 hover:border-white/25'
@@ -45,8 +45,8 @@ export const JourneySection: React.FC = () => {
                 >
                   <div>
                     {/* Top Row: Year/Period and Badge */}
-                    <div className="flex items-center justify-between mb-6">
-                      <span className="font-display font-black text-3xl sm:text-4xl text-white tracking-tight">
+                    <div className="flex items-center justify-between mb-4 sm:mb-6">
+                      <span className="font-display font-black text-2xl sm:text-4xl text-white tracking-tight">
                         {item.period}
                       </span>
                       <span

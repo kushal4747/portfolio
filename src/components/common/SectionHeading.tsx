@@ -45,7 +45,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className={`font-display font-extrabold uppercase tracking-tight text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.92] ${
+        className={`font-display font-extrabold uppercase tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-8xl leading-[0.94] sm:leading-[0.92] break-words ${
           lightMode
             ? 'text-[#0C0C0C]'
             : 'bg-gradient-to-b from-[#BBCCD7] via-[#8F9CA7] to-[#646973] bg-clip-text text-transparent'

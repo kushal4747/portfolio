@@ -83,8 +83,8 @@ export const MarqueeSection: React.FC = () => {
       </div>
 
       {/* Gradient Fades on edges for smooth vignette */}
-      <div className="absolute inset-y-0 left-0 w-16 md:w-32 bg-gradient-to-r from-[#0C0C0C] to-transparent pointer-events-none z-10" />
-      <div className="absolute inset-y-0 right-0 w-16 md:w-32 bg-gradient-to-l from-[#0C0C0C] to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-y-0 left-0 w-6 sm:w-16 md:w-32 bg-gradient-to-r from-[#0C0C0C] to-transparent pointer-events-none z-10" />
+      <div className="absolute inset-y-0 right-0 w-6 sm:w-16 md:w-32 bg-gradient-to-l from-[#0C0C0C] to-transparent pointer-events-none z-10" />
     </section>
   );
 };
@@ -100,7 +100,7 @@ const MarqueeCard: React.FC<{ item: TechMarqueeItem }> = ({ item }) => {
 
   return (
     <div
-      className="flex-shrink-0 w-64 md:w-72 p-5 rounded-2xl bg-[#141417] border border-white/10 hover:border-white/25 transition-all duration-300 hover:scale-[1.02] group shadow-lg"
+      className="flex-shrink-0 w-56 xs:w-64 md:w-72 p-4 sm:p-5 rounded-2xl bg-[#141417] border border-white/10 hover:border-white/25 transition-all duration-300 hover:scale-[1.02] group shadow-lg"
     >
       <div className="flex items-center justify-between mb-4">
         <div className="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/10 flex items-center justify-center text-white group-hover:border-white/20 transition-colors">

@@ -21,14 +21,14 @@ const iconMap: Record<string, React.FC<{ className?: string }>> = {
 
 export const InterestsSection: React.FC = () => {
   return (
-    <section className="relative py-20 md:py-28 bg-transparent text-[#D7E2EA] px-6 sm:px-8 lg:px-12 border-t border-white/5">
+    <section className="relative py-16 md:py-28 bg-transparent text-[#D7E2EA] px-4 sm:px-8 lg:px-12 border-t border-white/5">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
             <span className="font-mono text-xs tracking-[0.25em] uppercase text-[#8F9CA7] font-semibold block mb-2">
               06 / CURIOSITY &amp; DOMAINS
             </span>
-            <h2 className="font-display font-extrabold text-3xl sm:text-5xl text-white tracking-tight uppercase">
+            <h2 className="font-display font-extrabold text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight uppercase">
               CORE INTERESTS
             </h2>
           </div>
@@ -38,7 +38,7 @@ export const InterestsSection: React.FC = () => {
         </div>
 
         {/* Compact Interactive Bento Tags */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3.5 sm:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 sm:gap-4">
           {interestsList.map((interest, index) => {
             const Icon = iconMap[interest.icon] || Code2;
             return (

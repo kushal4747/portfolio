@@ -34,7 +34,7 @@ export const CircularRotatingProfile: React.FC<CircularRotatingProfileProps> = (
   const pathCircumference = Math.round(2 * Math.PI * textRadius); // ~1225px
 
   return (
-    <div className={`relative flex items-center justify-center select-none ${className}`}>
+    <div className={`relative flex items-center justify-center select-none aspect-square ${className}`}>
       {/* Outer Rotating Circular Typography SVG */}
       <motion.div
         animate={shouldReduceMotion ? { rotate: 0 } : { rotate: 360 }}
@@ -103,13 +103,13 @@ export const CircularRotatingProfile: React.FC<CircularRotatingProfileProps> = (
           {/* Soft Depth Ambient Glow */}
           <div className="absolute -inset-3 rounded-full bg-gradient-to-tr from-cyan-500/15 via-blue-500/10 to-transparent blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-          {/* Profile Photo Circular Container */}
-          <div className={`relative w-36 h-36 sm:w-44 sm:h-44 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-cyan-400/50 bg-[#121418] shadow-[0_0_30px_rgba(6,182,212,0.12)] group-hover:shadow-[0_0_45px_rgba(6,182,212,0.22)] transition-all duration-500 ${photoClassName}`}>
+          {/* Profile Photo Circular Container - Snug 1:1 Aspect Ratio */}
+          <div className={`relative w-40 h-40 sm:w-48 sm:h-48 md:w-52 md:h-52 lg:w-60 lg:h-60 rounded-full overflow-hidden border-2 border-white/20 group-hover:border-cyan-400/50 bg-[#121418] shadow-[0_0_30px_rgba(6,182,212,0.12)] group-hover:shadow-[0_0_45px_rgba(6,182,212,0.22)] transition-all duration-500 aspect-square ${photoClassName}`}>
             <img
               src={currentSrc}
               alt={alt}
               onError={handleImageError}
-              className="w-full h-full object-cover object-center filter saturate-[0.98] contrast-[1.04] group-hover:scale-105 group-hover:brightness-105 transition-all duration-500 ease-out"
+              className="w-full h-full object-cover object-[center_20%] filter saturate-[0.98] contrast-[1.04] group-hover:scale-105 group-hover:brightness-105 transition-all duration-500 ease-out"
             />
 
             {/* Subtle Inner Vignette & Gradient */}

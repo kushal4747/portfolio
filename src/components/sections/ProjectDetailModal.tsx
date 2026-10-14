@@ -37,7 +37,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
 
   return (
     <AnimatePresence>
-      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 md:p-8">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-2 xs:p-4 sm:p-6 md:p-8">
         {/* Backdrop */}
         <motion.div
           initial={{ opacity: 0 }}
@@ -54,7 +54,7 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.95, y: 20 }}
           transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#121418] border border-white/20 rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl text-[#D7E2EA] z-10 custom-scrollbar"
+          className="relative w-full max-w-4xl max-h-[92vh] overflow-y-auto bg-[#121418] border border-white/20 rounded-2xl sm:rounded-3xl p-4 sm:p-8 md:p-10 shadow-2xl text-[#D7E2EA] z-10 custom-scrollbar"
         >
           {/* Close Button */}
           <button
@@ -87,24 +87,32 @@ export const ProjectDetailModal: React.FC<ProjectDetailModalProps> = ({
           </div>
 
           {/* Title & Tagline */}
-          <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight mb-2">
+          <h2 className="font-display font-black text-2xl xs:text-3xl sm:text-5xl text-white tracking-tight mb-2">
             {project.title}
           </h2>
           {project.tagline && (
-            <p className="font-mono text-sm sm:text-base text-cyan-300/80 mb-6">
+            <p className="font-mono text-xs sm:text-base text-cyan-300/80 mb-6">
               {project.tagline}
             </p>
           )}
 
-          {/* Media Showcase Preview */}
-          <div className="relative rounded-2xl overflow-hidden bg-black/60 border border-white/10 aspect-[16/9] mb-8 shadow-inner">
+          {/* Media Showcase Preview with Adaptive Aspect Ratio & Ambient Backdrop */}
+          <div className="relative rounded-2xl overflow-hidden bg-black/90 border border-white/10 aspect-[16/10] sm:aspect-[16/9] mb-8 shadow-inner flex items-center justify-center">
+            {/* Ambient Blurred Fill */}
+            <img
+              src={project.images.cover}
+              alt=""
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover filter blur-2xl opacity-35 scale-125 pointer-events-none select-none"
+            />
+            {/* Main Crisp Foreground Image */}
             <img
               src={project.images.cover}
               alt={`${project.title} Cover`}
-              className="w-full h-full object-cover object-center"
+              className="relative z-10 max-h-full max-w-full w-auto h-auto object-contain filter brightness-[0.98] select-none"
             />
             {project.images.preview && project.images.preview !== project.images.cover && (
-              <div className="hidden sm:block absolute bottom-4 right-4 w-44 h-28 rounded-xl overflow-hidden border border-white/20 shadow-2xl bg-[#141418]">
+              <div className="hidden sm:block absolute bottom-4 right-4 w-44 h-28 rounded-xl overflow-hidden border border-white/25 shadow-2xl bg-[#141418] z-20">
                 <img
                   src={project.images.preview}
                   alt={`${project.title} detail`}

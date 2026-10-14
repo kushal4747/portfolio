@@ -47,7 +47,7 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
       if (!containerRef.current) return;
       const width = containerRef.current.clientWidth;
       if (width < 480) {
-        setRadii({ rx: Math.max(130, width * 0.38), ry: 50 });
+        setRadii({ rx: Math.max(145, width * 0.42), ry: 50 });
       } else if (width < 768) {
         setRadii({ rx: Math.max(200, width * 0.40), ry: 75 });
       } else {
@@ -175,9 +175,9 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
   return (
     <div className="w-full select-none" data-cursor="action">
       {/* Top Controls: Filter Pills + Orbit / Stream Toggle */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
         {/* Category Filters */}
-        <div className="flex flex-wrap items-center gap-1.5 p-1.5 bg-gray-100 rounded-2xl border border-gray-200">
+        <div className="flex items-center gap-1 sm:gap-1.5 p-1 sm:p-1.5 bg-gray-100 rounded-xl sm:rounded-2xl border border-gray-200 overflow-x-auto max-w-full scrollbar-none">
           {(['ALL', 'USING', 'LEARNING', 'EXPLORING'] as const).map((cat) => {
             const isSelected = selectedCategory === cat;
             const count = cat === 'ALL' ? skills.length : skills.filter((s) => s.category === cat).length;
@@ -185,7 +185,7 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
               <button
                 key={cat}
                 onClick={() => setSelectedCategory(cat)}
-                className={`px-3.5 py-1.5 rounded-xl font-mono text-xs font-semibold transition-all duration-200 flex items-center gap-2 ${
+                className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl font-mono text-[11px] sm:text-xs font-semibold whitespace-nowrap transition-all duration-200 flex items-center gap-1.5 sm:gap-2 flex-shrink-0 ${
                   isSelected
                     ? 'bg-black text-white shadow-sm'
                     : 'text-gray-600 hover:text-black hover:bg-gray-200/50'
@@ -193,7 +193,7 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
               >
                 <span>{cat}</span>
                 <span
-                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
+                  className={`text-[9px] sm:text-[10px] px-1.5 py-0.2 rounded-full font-bold ${
                     isSelected ? 'bg-white/20 text-white' : 'bg-gray-200 text-gray-700'
                   }`}
                 >
@@ -205,7 +205,7 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
         </div>
 
         {/* View Mode & Orbit Controls */}
-        <div className="flex items-center gap-2 self-start md:self-auto">
+        <div className="flex items-center gap-2 self-end sm:self-auto">
           {/* Pause / Play Toggle */}
           {viewMode === 'orbit' && (
             <button
@@ -267,7 +267,7 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
             setIsHovered(false);
             isDraggingRef.current = false;
           }}
-          className="relative w-full h-[460px] sm:h-[500px] md:h-[540px] flex items-center justify-center overflow-hidden rounded-3xl bg-radial from-gray-50 to-gray-100/60 border border-gray-200/80 shadow-inner cursor-grab active:cursor-grabbing"
+          className="relative w-full h-[390px] sm:h-[500px] md:h-[540px] flex items-center justify-center overflow-hidden rounded-3xl bg-radial from-gray-50 to-gray-100/60 border border-gray-200/80 shadow-inner cursor-grab active:cursor-grabbing"
           style={{ perspective: '1100px' }}
         >
           {/* Subtle Ambient Orbital Grid Circles */}
@@ -297,41 +297,41 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
           {/* Central Holographic Nucleus / Active Inspector Hub */}
           <motion.div
             layout
-            className="absolute z-10 pointer-events-auto p-4 sm:p-5 rounded-2xl bg-white/90 backdrop-blur-md border border-gray-200/90 shadow-xl max-w-[270px] sm:max-w-xs text-center flex flex-col items-center justify-center transition-all duration-300"
+            className="absolute z-10 pointer-events-auto p-3 sm:p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-gray-200/90 shadow-xl max-w-[170px] xs:max-w-[210px] sm:max-w-xs text-center flex flex-col items-center justify-center transition-all duration-300"
           >
             {activeSkill ? (
               <div>
                 <span
-                  className={`inline-block px-2.5 py-0.5 rounded-full font-mono text-[10px] font-bold uppercase tracking-wider mb-2 border ${
+                  className={`inline-block px-2 sm:px-2.5 py-0.5 rounded-full font-mono text-[9px] sm:text-[10px] font-bold uppercase tracking-wider mb-1 sm:mb-2 border ${
                     getCategoryStyles(activeSkill.category).badge
                   }`}
                 >
                   {activeSkill.category}
                 </span>
-                <h5 className="font-display font-extrabold text-xl sm:text-2xl text-gray-900 leading-tight">
+                <h5 className="font-display font-extrabold text-base xs:text-lg sm:text-2xl text-gray-900 leading-tight">
                   {activeSkill.name}
                 </h5>
-                <p className="font-mono text-xs text-gray-500 mt-1 leading-snug">
+                <p className="font-mono text-[10px] sm:text-xs text-gray-500 mt-0.5 sm:mt-1 leading-snug line-clamp-2">
                   {activeSkill.note || 'Active competency in continuous progression.'}
                 </p>
-                <div className="mt-2.5 pt-2 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[11px] font-mono text-gray-400">
+                <div className="mt-1.5 sm:mt-2.5 pt-1.5 sm:pt-2 border-t border-gray-100 flex items-center justify-center gap-1.5 text-[9px] sm:text-[11px] font-mono text-gray-400">
                   <span className="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-ping" />
-                  <span>Interactive Node Selected</span>
+                  <span>Selected</span>
                 </div>
               </div>
             ) : (
               <div>
-                <div className="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-2 shadow-sm">
-                  <Orbit className="w-4 h-4 animate-spin-slow" />
+                <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black text-white flex items-center justify-center mx-auto mb-1 sm:mb-2 shadow-sm">
+                  <Orbit className="w-3.5 h-3.5 sm:w-4 sm:h-4 animate-spin-slow" />
                 </div>
-                <span className="font-mono text-[10px] tracking-widest uppercase text-gray-400 font-bold block">
-                  TECH MATRIX NUCLEUS
+                <span className="font-mono text-[8px] sm:text-[10px] tracking-widest uppercase text-gray-400 font-bold block">
+                  TECH MATRIX
                 </span>
-                <h5 className="font-display font-bold text-lg sm:text-xl text-gray-900 mt-0.5">
+                <h5 className="font-display font-bold text-sm sm:text-xl text-gray-900 mt-0.5">
                   Infinite Loop
                 </h5>
-                <p className="font-mono text-[11px] text-gray-500 mt-1">
-                  Drag to rotate • Hover to inspect
+                <p className="font-mono text-[9px] sm:text-[11px] text-gray-500 mt-0.5 sm:mt-1 hidden xs:block">
+                  Drag to rotate • Tap to inspect
                 </p>
               </div>
             )}
@@ -360,17 +360,17 @@ export const InfiniteSkillOrbit: React.FC<InfiniteSkillOrbitProps> = ({ skills }
                 }}
               >
                 <div
-                  className={`group px-3.5 py-2 sm:px-4 sm:py-2.5 rounded-2xl bg-white border shadow-md transition-all duration-200 flex items-center gap-2.5 ${
+                  className={`group px-2.5 py-1 sm:px-4 sm:py-2.5 rounded-xl sm:rounded-2xl bg-white border shadow-md transition-all duration-200 flex items-center gap-1.5 sm:gap-2.5 ${
                     isCardActive
                       ? `${catStyles.activeGlow} shadow-lg ring-2 ring-black/10 scale-105`
                       : 'border-gray-200 hover:border-black/50 hover:shadow-lg'
                   }`}
                 >
                   {/* Category Status Dot */}
-                  <span className={`w-2 h-2 rounded-full flex-shrink-0 ${catStyles.dot}`} />
+                  <span className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full flex-shrink-0 ${catStyles.dot}`} />
 
                   {/* Skill Name */}
-                  <span className="font-display font-bold text-xs sm:text-sm text-gray-900 tracking-tight whitespace-nowrap">
+                  <span className="font-display font-bold text-[11px] sm:text-sm text-gray-900 tracking-tight whitespace-nowrap">
                     {skill.name}
                   </span>
 

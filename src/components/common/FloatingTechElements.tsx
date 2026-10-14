@@ -28,7 +28,7 @@ export const FloatingTechElements: React.FC = () => {
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="absolute inset-0 pointer-events-none overflow-hidden select-none z-0"
+      className="hidden md:block absolute inset-0 pointer-events-none overflow-hidden select-none z-0"
       aria-hidden="true"
     >
       {/* Element 1: 3D Terminal / Code Window (Top Right) */}

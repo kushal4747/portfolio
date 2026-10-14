@@ -61,23 +61,23 @@ export const Hero: React.FC = () => {
             <div className="lg:col-span-8 flex flex-col items-center lg:items-start text-center lg:text-left">
               {/* Line 1: HI, I'M */}
               <FadeIn delay={0.15} direction="down">
-                <h1 className="font-display font-black tracking-tight text-3xl sm:text-5xl md:text-6xl lg:text-7xl uppercase text-[#646973] select-none leading-none mb-1">
+                <h1 className="font-display font-black tracking-tight text-xl xs:text-2xl sm:text-4xl md:text-5xl lg:text-6xl uppercase text-[#646973] select-none leading-none mb-1">
                   {profileConfig.heroHeadingLine1}
                 </h1>
               </FadeIn>
 
-              {/* Line 2: VISHWAJEET (Huge, Dominant, Unobstructed) */}
+              {/* Line 2: VISHWAJEET (Huge, Dominant, Unobstructed, Responsive) */}
               <FadeIn delay={0.2} direction="up" className="w-full">
-                <h2 className="w-full font-display font-black tracking-tighter text-6xl sm:text-8xl md:text-9xl lg:text-[7.5rem] xl:text-[9rem] leading-[0.84] uppercase bg-gradient-to-b from-[#BBCCD7] via-[#8F9CA7] to-[#404550] bg-clip-text text-transparent select-none">
+                <h2 className="w-full font-display font-black tracking-tighter text-4xl xs:text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[9rem] leading-[0.88] sm:leading-[0.84] uppercase bg-gradient-to-b from-[#BBCCD7] via-[#8F9CA7] to-[#404550] bg-clip-text text-transparent select-none break-words">
                   {profileConfig.heroHeadingLine2}
                 </h2>
               </FadeIn>
 
               {/* Dynamic Animated Subtitle / Role Cycler (Horizontal, Clean, Fixed) */}
-              <div className="mt-5 sm:mt-6 flex items-center gap-2 font-mono text-sm sm:text-base text-[#8F9CA7] h-8">
+              <div className="mt-4 sm:mt-6 flex items-center justify-center lg:justify-start gap-2 font-mono text-xs sm:text-base text-[#8F9CA7] h-8 max-w-full">
                 <Terminal className="w-4 h-4 text-cyan-400 flex-shrink-0" />
                 <span className="flex-shrink-0">I am a</span>
-                <div className="relative w-52 sm:w-64 text-left overflow-hidden h-6 font-semibold text-white">
+                <div className="relative w-44 xs:w-52 sm:w-64 text-left overflow-hidden h-6 font-semibold text-white">
                   <AnimatePresence mode="wait">
                     <motion.span
                       key={roleIndex}
@@ -98,18 +98,18 @@ export const Hero: React.FC = () => {
                 <p className="hidden sm:block text-base sm:text-lg text-[#8F9CA7] font-normal leading-relaxed">
                   {profileConfig.bio.heroIntro}
                 </p>
-                <p className="block sm:hidden text-sm text-[#8F9CA7] font-normal leading-relaxed">
+                <p className="block sm:hidden text-xs xs:text-sm text-[#8F9CA7] font-normal leading-relaxed">
                   {profileConfig.bio.heroIntroMobile}
                 </p>
               </FadeIn>
 
               {/* Hero CTAs: VIEW MY WORK & VISIBLE GMAIL */}
-              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+              <div className="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-3 sm:gap-4 w-full">
                 {/* Primary CTA: VIEW MY WORK */}
                 <Magnet strength={0.35}>
                   <button
                     onClick={() => scrollTo('projects')}
-                    className="group relative px-7 py-3.5 rounded-full bg-[#D7E2EA] text-[#0C0C0C] font-display font-bold text-xs tracking-wider uppercase overflow-hidden shadow-xl shadow-cyan-950/20 transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2.5"
+                    className="group relative px-6 sm:px-7 py-3.5 rounded-full bg-[#D7E2EA] text-[#0C0C0C] font-display font-bold text-xs tracking-wider uppercase overflow-hidden shadow-xl shadow-cyan-950/20 transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2.5"
                   >
                     <span className="relative z-10">VIEW MY WORK</span>
                     <ArrowDownRight className="w-4 h-4 relative z-10 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
@@ -121,29 +121,29 @@ export const Hero: React.FC = () => {
                 <Magnet strength={0.25}>
                   <a
                     href={`mailto:${socialConfig.email}`}
-                    className="px-5 sm:px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-[#D7E2EA] hover:text-white border border-white/10 hover:border-cyan-500/40 font-mono text-xs tracking-wider transition-all transform hover:scale-105 active:scale-95 flex items-center gap-2.5 group shadow-sm"
+                    className="px-4 sm:px-6 py-3.5 rounded-full bg-white/[0.04] hover:bg-white/[0.08] text-[#D7E2EA] hover:text-white border border-white/10 hover:border-cyan-500/40 font-mono text-xs tracking-wider transition-all transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2.5 group shadow-sm max-w-full truncate"
                   >
                     <Mail className="w-3.5 h-3.5 text-cyan-400 group-hover:scale-110 transition-transform flex-shrink-0" />
-                    <span className="font-semibold text-white/95">{socialConfig.email}</span>
+                    <span className="font-semibold text-white/95 truncate">{socialConfig.email}</span>
                   </a>
                 </Magnet>
               </div>
             </div>
 
             {/* Right Column: Profile Image + Circular Rotating Name (Cols 9-12) */}
-            <div className="lg:col-span-4 flex justify-center lg:justify-end mt-6 lg:mt-0">
+            <div className="lg:col-span-4 flex justify-center lg:justify-end mt-8 lg:mt-0">
               <CircularRotatingProfile
                 imgSrc={profileConfig.portrait.src}
                 fallbackSrc="/profile/profile.svg"
                 alt={profileConfig.portrait.alt}
-                className="w-[260px] h-[260px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px]"
+                className="w-[240px] h-[240px] xs:w-[270px] xs:h-[270px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px]"
               />
             </div>
           </div>
         </div>
 
         {/* Bottom Scroll Cue */}
-        <div className="flex justify-between items-end max-w-7xl mx-auto w-full pt-8 px-4 text-xs font-mono text-[#5F6B76]">
+        <div className="flex flex-col xs:flex-row justify-between items-center xs:items-end gap-3 max-w-7xl mx-auto w-full pt-8 px-4 text-xs font-mono text-[#5F6B76]">
           <div className="flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-white/40" />
             <span>VISHWAJEET KUMAR SAHU</span>
